@@ -44,6 +44,9 @@ export default function GameModes({ onPlay }) {
             <Role active={roles.bodyguard} onClick={toggleRole('bodyguard')}>
               Guarda-costas
             </Role>
+            <Role active={roles.fake} onClick={toggleRole('fake')}>
+              Comandante Falso
+            </Role>
           </div>
         </Card.Description>
       </Card.Content>
