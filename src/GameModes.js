@@ -3,7 +3,7 @@ import { Card, Button } from 'semantic-ui-react';
 import Role from './GameModes/Role';
 
 export default function GameModes({ onPlay }) {
-  const [roles, setRoles] = React.useState({ commandant: true, assassin: true });
+  const [roles, setRoles] = React.useState({ commander: true, assassin: true });
   const toggleRole = (role) => {
     return () => {
       const clone = Object.assign({}, roles);
@@ -33,7 +33,7 @@ export default function GameModes({ onPlay }) {
         <Card.Description>
           Selecione as funções que deseja usar:
           <div style={{ marginTop: '10px' }}>
-            <Role active={roles.commandant}>Comandante</Role>
+            <Role active={roles.commander}>Comandante</Role>
             <Role active={roles.assassin}>Assassino</Role>
             <Role active={roles.invisible} onClick={toggleRole('invisible')}>
               Agente Invisível
