@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Grid } from 'semantic-ui-react';
+import { Card, Grid, Image } from 'semantic-ui-react';
 import getSourceDataFromRoles from './lib/actions'
 import ptBR from './lib/actions/pt-BR'
 const Actions = getSourceDataFromRoles(ptBR);
@@ -32,6 +32,7 @@ export default function Game({ audioRef, roles, onEnd }) {
     <Grid.Row>
       <Grid.Column>
         <Card>
+          <Image src={currentAction.image} wrapped ui={false} />
           <Card.Content>
             <Card.Header style={{ textAlign: 'center' }}>
               {currentAction.text}
