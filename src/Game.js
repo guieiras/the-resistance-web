@@ -5,11 +5,11 @@ import ptBR from './lib/actions/pt-BR'
 const Actions = getSourceDataFromRoles(ptBR);
 
 export default function Game({ audioRef, roles, onEnd }) {
-  let trail;
+  const trail = React.useRef();
   const [currentAction, setCurrentAction] = React.useState({});
   function nextAction() {
-    if (trail.length > 0) {
-      const [item] = trail.splice(0, 1);
+    if (trail.current.length > 0) {
+      const [item] = trail.current.splice(0, 1);
       const listener = () => {
         audioRef.current.removeEventListener('ended', listener);
         setTimeout(nextAction, item.timer);
@@ -24,7 +24,7 @@ export default function Game({ audioRef, roles, onEnd }) {
   }
 
   React.useEffect(() => {
-    trail = [...Actions(roles)];
+    trail.current = [...Actions(roles)];
     nextAction();
   }, [roles]);
 
