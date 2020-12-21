@@ -26,7 +26,7 @@ export default function Game({ audioRef, roles, onEnd }) {
   React.useEffect(() => {
     trail.current = [...Actions(roles)];
     nextAction();
-  }, [roles]);
+  }, [roles]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return <Grid verticalAlign='middle' columns={2} centered>
     <Grid.Row>
