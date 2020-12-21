@@ -18,7 +18,7 @@ import commander from '../../assets/pt-BR/images/commander.png';
 import everyone from '../../assets/pt-BR/images/everyone.png';
 import spy from '../../assets/pt-BR/images/spy.png';
 
-export default ({
+const actionsPtBR = {
   everyoneClose: {
     audio: everyoneClose,
     text: 'Todos, fechem os olhos!',
@@ -89,4 +89,6 @@ export default ({
     text: 'Guarda-costas feche os olhos. Comandante e Comandante Falso, abaixem o polegar.',
     image: bodyguard
   }
-});
+};
+
+export default actionsPtBR;
